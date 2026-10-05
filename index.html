@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VALKYRIE | ヴァルキリー</title>
+  <style>
+    /* --- ESTILO BASE (BLANCO Y NEGRO / MANGA) --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px 15px;
+      overflow-x: hidden;
+    }
+
+    /* CURSOR RETRO PERSONALIZADO (Solo activo en PC con mouse) */
+    @media (hover: hover) and (pointer: fine) {
+      body, button, canvas, a {
+        cursor: crosshair; /* Puedes reemplazarlo luego por: url('cursor.png'), auto; */
+      }
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .container {
+      width: 100%;
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ENCABEZADO */
+    header {
+      border: 2px solid #f2f2f2;
+      padding: 20px;
+      background: #000;
+      box-shadow: 6px 6px 0px #ffffff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .sub {
+      font-size: 0.85rem;
+      margin-top: 6px;
+      letter-spacing: 2px;
+      color: #999;
+    }
+
+    /* ENLACES / REDES */
+    .links-bar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid #f2f2f2;
+      background: transparent;
+      color: #f2f2f2;
+      padding: 8px 16px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      background: #f2f2f2;
+      color: #000;
+    }
+
+    /* SECCIÓN DEL JUEGO */
+    .game-box {
+      border: 2px solid #f2f2f2;
+      background: #000;
+      padding: 15px;
+      box-shadow: 6px 6px 0px #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .game-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    canvas {
+      width: 100%;
+      max-width: 600px;
+      height: 200px;
+      background-color: #ffffff;
+      border: 2px solid #000;
+      touch-action: none;
+    }
+
+    .instructions {
+      font-size: 0.75rem;
+      color: #aaa;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* PIE DE PÁGINA */
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #666;
+      margin-top: 10px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>VALKYRIE</h1>
+      <p class="sub">FIGURE ARCHIVE & IMPORT // TOKYO ⇄ LIMA</p>
+      <div class="links-bar">
+        <a href="https://instagram.com/valkyrie.pe" target="_blank" class="btn">INSTAGRAM: @valkyrie.pe</a>
+      </div>
+    </header>
+
+    <!-- Mini-Juego: Osaka Run -->
+    <section class="game-box">
+      <div class="game-header">
+        <span>OSAKA JUMP</span>
+        <span>SCORE: <span id="score">0</span></span>
+      </div>
+
+      <canvas id="gameCanvas" width="600" height="200"></canvas>
+
+      <p class="instructions">
+        [PC]: Pulsa <b>ESPACIO</b> o <b>FLECHA ARRIBA</b> | [Móvil]: Toca la pantalla para saltar
+      </p>
+    </section>
+
+    <footer>
+      © VALKYRIE. LAB MEMBER 003 PROJECT.
+    </footer>
+  </div>
+
+  <!-- LÓGICA DEL JUEGO EN JAVASCRIPT -->
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const scoreEl = document.getElementById('score');
+
+    let gameRunning = true;
+    let score = 0;
+    let gameSpeed = 5;
+
+    // Osaka (Jugador)
+    const osaka = {
+      x: 50,
+      y: 130,
+      width: 32,
+      height: 48,
+      dy: 0,
+      jumpForce: -11,
+      gravity: 0.65,
+      grounded: true,
+      draw() {
+        ctx.fillStyle = '#000000';
+        // Cabeza
+        ctx.fillRect(this.x + 4, this.y, 24, 20);
+        // Rostro Osaka
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(this.x + 8, this.y + 4, 16, 14);
+        // Ojos característicos (puntos)
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(this.x + 11, this.y + 10, 2, 4);
+        ctx.fillRect(this.x + 19, this.y + 10, 2, 4);
+        // Cuerpo / Uniforme escolar
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(this.x + 6, this.y + 20, 20, 20);
+        // Piernas
+        ctx.fillRect(this.x + 8, this.y + 40, 5, 8);
+        ctx.fillRect(this.x + 19, this.y + 40, 5, 8);
+      },
+      jump() {
+        if (this.grounded) {
+          this.dy = this.jumpForce;
+          this.grounded = false;
+        }
+      },
+      update() {
+        this.y += this.dy;
+        if (this.y + this.height < 180) {
+          this.dy += this.gravity;
+          this.grounded = false;
+        } else {
+          this.dy = 0;
+          this.grounded = true;
+          this.y = 180 - this.height;
+        }
+        this.draw();
+      }
+    };
+
+    // Obstáculos
+    let obstacles = [];
+    let spawnTimer = 0;
+
+    class Obstacle {
+      constructor() {
+        this.x = canvas.width;
+        this.width = 20;
+        this.height = 30 + Math.random() * 20;
+        this.y = 180 - this.height;
+      }
+      draw() {
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+        // Línea decorativa manga
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(this.x + 4, this.y + 4, this.width - 8, this.height - 8);
+      }
+      update() {
+        this.x -= gameSpeed;
+        this.draw();
+      }
+    }
+
+    // Suelo
+    function drawGround() {
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, 180, canvas.width, 2);
+      // Trama retro de puntos
+      for (let i = 0; i < canvas.width; i += 20) {
+        ctx.fillRect((i - (score * 2) % 20), 186, 6, 2);
+      }
+    }
+
+    function resetGame() {
+      obstacles = [];
+      score = 0;
+      gameSpeed = 5;
+      osaka.y = 130;
+      osaka.dy = 0;
+      gameRunning = true;
+      loop();
+    }
+
+    // Controles
+    function handleAction() {
+      if (!gameRunning) {
+        resetGame();
+      } else {
+        osaka.jump();
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' || e.code === 'ArrowUp') {
+        e.preventDefault();
+        handleAction();
+      }
+    });
+
+    canvas.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      handleAction();
+    });
+
+    // Bucle principal
+    function loop() {
+      if (!gameRunning) return;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawGround();
+      osaka.update();
+
+      // Generar obstáculos
+      spawnTimer++;
+      if (spawnTimer > Math.max(60, 110 - Math.floor(score / 50))) {
+        obstacles.push(new Obstacle());
+        spawnTimer = 0;
+      }
+
+      // Mover y verificar colisiones
+      for (let i = obstacles.length - 1; i >= 0; i--) {
+        obstacles[i].update();
+
+        // Colisión (Caja contenedora de Osaka)
+        if (
+          osaka.x + 8 < obstacles[i].x + obstacles[i].width &&
+          osaka.x + osaka.width - 8 > obstacles[i].x &&
+          osaka.y + 4 < obstacles[i].y + obstacles[i].height &&
+          osaka.y + osaka.height > obstacles[i].y
+        ) {
+          gameRunning = false;
+          ctx.fillStyle = '#000000';
+          ctx.font = 'bold 22px Courier New';
+          ctx.textAlign = 'center';
+          ctx.fillText('¡GAME OVER!', canvas.width / 2, 90);
+          ctx.font = '14px Courier New';
+          ctx.fillText('Toca o pulsa espacio para reiniciar', canvas.width / 2, 120);
+          return;
+        }
+
+        // Eliminar los que salieron de pantalla y sumar puntos
+        if (obstacles[i].x + obstacles[i].width < 0) {
+          obstacles.splice(i, 1);
+          score += 10;
+          scoreEl.textContent = score;
+          if (score % 60 === 0 && gameSpeed < 10) {
+            gameSpeed += 0.5;
+          }
+        }
+      }
+
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+  </script>
+</body>
+</html>
