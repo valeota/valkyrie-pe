@@ -3,142 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>valkyrie.pe // archive</title>
+  <title>valkyrie.pe</title>
   <style>
-    /* --- PALETA BASE: GRISES PROFUNDOS Y CRISTAL AERO --- */
+    /* --- PALETA BASE AERO DARK --- */
     :root {
-      --bg-dark: #0f1012;
-      --panel-bg: #181a1e;
-      --panel-inner: #121316;
-      --border-outer: #3a3d45;
-      --border-inner: #24262b;
-      --text-main: #dcdcdc;
-      --text-dim: #8b8e96;
-      --accent-gloss: rgba(255, 255, 255, 0.08);
-      --highlight: #e0e0e0;
+      --bg-dark: #0d0e11;
+      --panel-bg: #16181c;
+      --panel-inner: #111215;
+      --border-outer: #33363f;
+      --border-inner: #22242a;
+      --text-main: #dedede;
+      --text-dim: #7f838d;
+      --highlight: #ffffff;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      user-select: none;
     }
 
     body {
       background-color: var(--bg-dark);
-      background-image: radial-gradient(circle at 50% 20%, #1f2228 0%, var(--bg-dark) 80%);
+      background-image: radial-gradient(circle at 50% 15%, #1a1d24 0%, var(--bg-dark) 85%);
       color: var(--text-main);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Geneva, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 25px 15px 80px 15px;
-      position: relative;
+      padding: 30px 15px;
       overflow-x: hidden;
     }
 
-    /* CURSOR RETRO */
     @media (hover: hover) and (pointer: fine) {
       body, button, a {
         cursor: crosshair;
       }
     }
 
-    /* CONTENEDOR TIPO VENTANA WEB 2.0 */
+    /* VENTANA PRINCIPAL */
     .aero-window {
       width: 100%;
       max-width: 860px;
       background: var(--panel-bg);
       border: 1px solid var(--border-outer);
-      border-radius: 14px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.12);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      z-index: 2;
     }
 
-    /* BARRA SUPERIOR GLOSSY (HEADER) */
+    /* HEADER: SOLO VALKYRIE.PE Y BOTÓN IG */
     .window-header {
-      background: linear-gradient(180deg, #2c2f37 0%, #1a1b1f 50%, #121316 100%);
+      background: linear-gradient(180deg, #272a31 0%, #17181c 60%, #111215 100%);
       border-bottom: 1px solid var(--border-inner);
-      padding: 12px 20px;
+      padding: 14px 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
     }
 
     .brand-title {
       font-family: "Georgia", serif;
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       letter-spacing: 1px;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+      font-weight: 700;
+    }
+
+    .btn-ig {
+      padding: 7px 14px;
+      background: linear-gradient(180deg, #2c2f37 0%, #1a1b1f 100%);
+      border: 1px solid #434752;
+      border-radius: 6px;
+      color: #e0e0e0;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 5px rgba(0,0,0,0.5);
+      transition: all 0.15s ease;
+    }
+
+    .btn-ig:hover {
+      background: linear-gradient(180deg, #373b45 0%, #202227 100%);
       color: #fff;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      border-color: #585d6b;
     }
 
-    .brand-sub {
-      font-size: 0.75rem;
-      color: var(--text-dim);
-      font-family: monospace;
-    }
-
-    /* LAYOUT PRINCIPAL: LATERAL + CONTENIDO */
+    /* CUERPO: SIDEBAR + CONTENIDO */
     .window-body {
       display: flex;
-      min-height: 480px;
+      min-height: 460px;
       background: var(--panel-inner);
     }
 
-    /* SIDEBAR GLOSSY */
     .sidebar {
-      width: 170px;
-      background: linear-gradient(90deg, #16181b 0%, #131417 100%);
+      width: 160px;
+      background: linear-gradient(90deg, #15171a 0%, #111215 100%);
       border-right: 1px solid var(--border-inner);
-      padding: 15px 10px;
+      padding: 18px 12px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 9px;
       flex-shrink: 0;
     }
 
     .nav-btn {
       width: 100%;
-      padding: 9px 12px;
-      background: linear-gradient(180deg, #26292f 0%, #17181c 100%);
-      border: 1px solid #33363e;
+      padding: 9px 14px;
+      background: linear-gradient(180deg, #24272e 0%, #17181c 100%);
+      border: 1px solid #33363f;
       border-radius: 6px;
       color: var(--text-main);
       font-size: 0.85rem;
       font-weight: 600;
       letter-spacing: 1px;
       text-align: left;
-      text-decoration: none;
-      display: block;
       transition: all 0.15s ease;
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 2px 4px rgba(0,0,0,0.4);
     }
 
     .nav-btn:hover {
-      background: linear-gradient(180deg, #333740 0%, #1f2127 100%);
+      background: linear-gradient(180deg, #2e323b 0%, #1d1f25 100%);
       color: #fff;
-      border-color: #4f535e;
+      border-color: #4a4f5c;
     }
 
     .nav-btn.active {
-      background: linear-gradient(180deg, #151618 0%, #2a2d34 100%);
-      border-color: #666a75;
+      background: linear-gradient(180deg, #141517 0%, #252830 100%);
+      border-color: #5d6270;
       color: #fff;
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.7);
     }
 
-    /* ÁREA DE CONTENIDO DINÁMICO */
     .content-area {
       flex: 1;
-      padding: 22px;
+      padding: 24px;
       overflow-y: auto;
-      max-height: 580px;
     }
 
     .tab-content {
@@ -147,25 +154,94 @@
 
     .tab-content.active {
       display: block;
-      animation: fadeIn 0.2s ease-in-out;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* CONTENEDOR DEL JUEGO */
+    .game-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 620px;
+      margin: 0 auto;
     }
 
+    canvas {
+      width: 100%;
+      height: 240px;
+      background-color: #0b0c0e;
+      border: 1px solid var(--border-inner);
+      border-radius: 8px;
+      display: block;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
+      touch-action: none;
+    }
+
+    /* BOTÓN SUPERPUESTO DE PLAY INICIAL */
+    .play-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(11, 12, 14, 0.75);
+      border-radius: 8px;
+      backdrop-filter: blur(2px);
+      transition: opacity 0.2s ease;
+    }
+
+    .play-overlay.hidden {
+      display: none;
+    }
+
+    .play-btn-big {
+      background: linear-gradient(180deg, #2c2f37 0%, #15161a 100%);
+      border: 1px solid #4a4f5c;
+      color: #ffffff;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 6px 15px rgba(0,0,0,0.6);
+      transition: all 0.15s ease;
+    }
+
+    .play-btn-big:hover {
+      transform: scale(1.04);
+      background: linear-gradient(180deg, #373b45 0%, #1c1e23 100%);
+      border-color: #63697a;
+    }
+
+    .play-btn-big svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
+    }
+
+    .game-hint {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 12px;
+      letter-spacing: 1px;
+    }
+
+    /* TARJETAS DE FIGURAS Y ROPA */
     .section-title {
       font-size: 1.1rem;
       letter-spacing: 1.5px;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
       text-transform: uppercase;
       border-bottom: 1px solid var(--border-inner);
       padding-bottom: 6px;
       color: var(--highlight);
     }
 
-    /* GRID PARA FIGURAS Y ROPA */
     .items-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -173,33 +249,25 @@
     }
 
     .card {
-      background: #191b20;
+      background: #17181d;
       border: 1px solid var(--border-inner);
       border-radius: 8px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.15s ease, border-color 0.15s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: #4f535e;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
     .card-img-placeholder {
       width: 100%;
       height: 190px;
-      background: #0f1012;
+      background: #0d0e11;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--text-dim);
       font-size: 0.8rem;
       border-bottom: 1px solid var(--border-inner);
-      background-size: cover;
-      background-position: center;
     }
 
     .card-info {
@@ -218,73 +286,10 @@
     .card-status {
       font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #aaa;
+      color: #8c909b;
     }
 
-    /* SECCIÓN ANIME LINKS */
-    .link-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .link-item {
-      padding: 12px 16px;
-      background: #18191e;
-      border: 1px solid var(--border-inner);
-      border-radius: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-decoration: none;
-      color: var(--text-main);
-      font-size: 0.9rem;
-      transition: background 0.15s;
-    }
-
-    .link-item:hover {
-      background: #22242a;
-      color: #fff;
-    }
-
-    /* MINIJUEGO CANVAS */
-    #gameCanvas {
-      width: 100%;
-      max-width: 580px;
-      height: 180px;
-      background: #0d0e10;
-      border: 1px solid var(--border-inner);
-      display: block;
-      margin: 0 auto;
-      border-radius: 6px;
-    }
-
-    /* PERSONAJES FLOTANTES DECORATIVOS (MOCKUP) */
-    .sticker-left {
-      position: fixed;
-      bottom: 0px;
-      left: 15px;
-      width: 130px;
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.85;
-      filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));
-    }
-
-    .sticker-right {
-      position: fixed;
-      bottom: 0px;
-      right: 15px;
-      width: 170px;
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.85;
-      filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));
-    }
-
-    /* RESPONSIVE: MÓVILES */
+    /* RESPONSIVE MÓVIL */
     @media (max-width: 680px) {
       .window-body {
         flex-direction: column;
@@ -298,176 +303,379 @@
       }
       .nav-btn {
         text-align: center;
-        padding: 8px 10px;
-      }
-      .sticker-left, .sticker-right {
-        display: none; /* En celular se ocultan para no tapar contenido */
+        padding: 8px 12px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- VENTANA PRINCIPAL DARK AERO -->
   <div class="aero-window">
     
-    <!-- Encabezado con acabado tipo vidrio -->
+    <!-- Encabezado con solo valkyrie.pe e Instagram -->
     <header class="window-header">
-      <div>
-        <h1 class="brand-title">valkyrie.pe</h1>
-        <p class="brand-sub">FIGURE ARCHIVE & TEXTILES // LIMA</p>
-      </div>
-      <div>
-        <a href="https://instagram.com/valkyrie.pe" target="_blank" class="nav-btn" style="text-align:center;">IG: @valkyrie.pe</a>
-      </div>
+      <h1 class="brand-title">valkyrie.pe</h1>
+      <a href="https://instagram.com/valkyrie.pe" target="_blank" class="btn-ig">IG: @valkyrie.pe</a>
     </header>
 
     <div class="window-body">
-      <!-- Menú lateral idéntico al mockup -->
+      <!-- Menú Lateral -->
       <nav class="sidebar">
-        <button class="nav-btn active" onclick="openTab(event, 'tab-play')">play</button>
+        <button class="nav-btn active" onclick="openTab(event, 'tab-jugar')">jugar</button>
         <button class="nav-btn" onclick="openTab(event, 'tab-figuras')">figuras</button>
         <button class="nav-btn" onclick="openTab(event, 'tab-ropa')">ropa</button>
         <button class="nav-btn" onclick="openTab(event, 'tab-anime')">anime</button>
       </nav>
 
-      <!-- Contenedor central intercambiable -->
+      <!-- Área de Contenido -->
       <main class="content-area">
 
-        <!-- 1. PESTAÑA: PLAY -->
-        <section id="tab-play" class="tab-content active">
-          <h2 class="section-title">Osaka Jump // Minigame</h2>
-          <canvas id="gameCanvas" width="580" height="180"></canvas>
-          <p style="font-size: 0.75rem; color: var(--text-dim); text-align: center; margin-top: 10px;">
-            [Espacio / Tocar] para saltar obstáculos
-          </p>
+        <!-- 1. JUGAR -->
+        <section id="tab-jugar" class="tab-content active">
+          <div class="game-wrapper">
+            <canvas id="gameCanvas" width="600" height="240"></canvas>
+            
+            <!-- Botón Inicial PLAY con triángulo -->
+            <div id="playOverlay" class="play-overlay">
+              <button class="play-btn-big" onclick="startGame()">
+                <svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+                PLAY
+              </button>
+              <p class="game-hint">[ESPACIO] o toca la pantalla para saltar</p>
+            </div>
+          </div>
         </section>
 
-        <!-- 2. PESTAÑA: FIGURAS (Plantilla para catálogo) -->
+        <!-- 2. FIGURAS -->
         <section id="tab-figuras" class="tab-content">
-          <h2 class="section-title">Figure Archive // Stock & Pre-orders</h2>
-          <div class="items-grid">
-            
-            <!-- Ejemplo de Item 1 -->
+          <h2 class="section-title">Figuras // Archivo & Stock</h2>
+          <div class="items-grid" id="figuresGrid">
             <div class="card">
               <div class="card-img-placeholder">[Foto Figura 1]</div>
               <div class="card-info">
-                <span class="card-name">Kurisu Makise 1/7</span>
-                <span class="card-status">Estado: Incoming</span>
+                <span class="card-name">Figura #1</span>
+                <span class="card-status">En stock</span>
               </div>
             </div>
-
-            <!-- Ejemplo de Item 2 -->
-            <div class="card">
-              <div class="card-img-placeholder">[Foto Figura 2]</div>
-              <div class="card-info">
-                <span class="card-name">Eris Boreas 1/7</span>
-                <span class="card-status">Estado: Pre-order</span>
-              </div>
-            </div>
-
           </div>
         </section>
 
-        <!-- 3. PESTAÑA: ROPA (Plantilla para prendas) -->
+        <!-- 3. ROPA -->
         <section id="tab-ropa" class="tab-content">
-          <h2 class="section-title">Custom Apparel // Hand-painted</h2>
-          <div class="items-grid">
-            
+          <h2 class="section-title">Prendas // Colección</h2>
+          <div class="items-grid" id="clothesGrid">
             <div class="card">
               <div class="card-img-placeholder">[Foto Prenda 1]</div>
               <div class="card-info">
-                <span class="card-name">Oversize Tee #01</span>
-                <span class="card-status">Edición limitada</span>
+                <span class="card-name">Prenda #1</span>
+                <span class="card-status">Disponible</span>
               </div>
             </div>
-
-            <div class="card">
-              <div class="card-img-placeholder">[Foto Prenda 2]</div>
-              <div class="card-info">
-                <span class="card-name">Crewneck Custom</span>
-                <span class="card-status">Bajo pedido</span>
-              </div>
-            </div>
-
           </div>
         </section>
 
-        <!-- 4. PESTAÑA: ANIME (Enlaces / Recursos) -->
+        <!-- 4. ANIME -->
         <section id="tab-anime" class="tab-content">
-          <h2 class="section-title">Anime Directory & Links</h2>
-          <div class="link-list">
-            <a href="#" class="link-item">
-              <span>Steins;Gate // Official Lab Archive</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">↗</span>
-            </a>
-            <a href="#" class="link-item">
-              <span>Database // AmiAmi JP Tracker</span>
-              <span style="font-size:0.75rem; color:var(--text-dim);">↗</span>
-            </a>
-          </div>
+          <h2 class="section-title">Links & Directorio</h2>
+          <p style="font-size:0.85rem; color:var(--text-dim);">Próximamente los links oficiales...</p>
         </section>
 
       </main>
     </div>
   </div>
 
-  <!-- STICKERS / ILUSTRACIONES (Reemplazarás los src por tus imágenes PNG) -->
-  <!-- <img src="chiyo-padre.png" class="sticker-left" alt="Chiyo Father"> -->
-  <!-- <img src="osaka.png" class="sticker-right" alt="Osaka"> -->
-
-  <!-- SCRIPT: CAMBIO DE PESTAÑAS + JUEGO BASE -->
+  <!-- SCRIPT DEL JUEGO CON FÍSICAS ESTILO DINO Y SPRITES DE OSAKA -->
   <script>
-    // Control de pestañas
+    // Cambio de pestañas
     function openTab(evt, tabId) {
-      const contents = document.querySelectorAll('.tab-content');
-      contents.forEach(el => el.classList.remove('active'));
-
-      const buttons = document.querySelectorAll('.nav-btn');
-      buttons.forEach(el => el.classList.remove('active'));
-
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
       evt.currentTarget.classList.add('active');
     }
 
-    // Mini juego Osaka simplificado en Canvas
+    // Canvas y Contexto
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
-    let y = 130, dy = 0, isJumping = false;
+    const overlay = document.getElementById('playOverlay');
 
-    function jump() {
-      if (!isJumping) {
-        dy = -8;
-        isJumping = true;
-      }
+    // Cargar y procesar imágenes quitando el fondo blanco automáticamente
+    function processImageTransparency(url) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => {
+          const c = document.createElement('canvas');
+          c.width = img.width;
+          c.height = img.height;
+          const cx = c.getContext('2d');
+          cx.drawImage(img, 0, 0);
+          
+          try {
+            const imgData = cx.getImageData(0, 0, c.width, c.height);
+            const d = imgData.data;
+            // Remover píxeles blancos del fondo (R, G, B > 235)
+            for (let i = 0; i < d.length; i += 4) {
+              if (d[i] > 235 && d[i+1] > 235 && d[i+2] > 235) {
+                d[i+3] = 0;
+              }
+            }
+            cx.putImageData(imgData, 0, 0);
+            const res = new Image();
+            res.src = c.toDataURL();
+            resolve(res);
+          } catch(e) {
+            resolve(img); // Fallback si CORS local
+          }
+        };
+        img.onerror = () => resolve(null);
+      });
     }
 
-    window.addEventListener('keydown', (e) => { if(e.code === 'Space') jump(); });
-    canvas.addEventListener('pointerdown', jump);
+    let imgRun = null;
+    let imgJump = null;
 
-    function gameLoop() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    processImageTransparency('osaka_run.png').then(img => imgRun = img);
+    processImageTransparency('osaka_jump.png').then(img => imgJump = img);
+
+    // Estado del juego
+    let isPlaying = false;
+    let isGameOver = false;
+    let score = 0;
+    let highScore = localStorage.getItem('valkyrie_hi') || 0;
+    let speed = 6;
+    let spawnDistanceCounter = 0;
+    let minSpawnInterval = 85;
+
+    // Osaka
+    const osaka = {
+      x: 55,
+      y: 150,
+      width: 44,
+      height: 60,
+      dy: 0,
+      jumpVelocity: -12.5,
+      gravity: 0.72,
+      groundY: 150,
+      isGrounded: true,
       
-      // Suelo
-      ctx.fillStyle = '#24262b';
-      ctx.fillRect(0, 160, canvas.width, 2);
+      jump() {
+        if (this.isGrounded) {
+          this.dy = this.jumpVelocity;
+          this.isGrounded = false;
+        }
+      },
+      update() {
+        this.y += this.dy;
+        if (!this.isGrounded) {
+          this.dy += this.gravity;
+        }
+        if (this.y >= this.groundY) {
+          this.y = this.groundY;
+          this.dy = 0;
+          this.isGrounded = true;
+        }
+      },
+      draw() {
+        const currentImg = (!this.isGrounded) ? imgJump : imgRun;
+        if (currentImg && currentImg.complete) {
+          ctx.drawImage(currentImg, this.x, this.y, this.width, this.height);
+        } else {
+          // Placeholder geométrico estilizado si las fotos aún no cargan
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(this.x + 8, this.y, 28, this.height);
+          ctx.fillStyle = '#000000';
+          ctx.fillRect(this.x + 14, this.y + 10, 4, 6);
+          ctx.fillRect(this.x + 26, this.y + 10, 4, 6);
+        }
+      }
+    };
 
-      // Osaka (caja temporal de animación)
-      y += dy;
-      if (y < 130) {
-        dy += 0.4;
+    // Obstáculos
+    let obstacles = [];
+
+    class Obstacle {
+      constructor(type) {
+        this.type = type; // 1: sencillo, 2: doble/ancho, 3: alto
+        this.x = canvas.width;
+        if (type === 1) {
+          this.width = 18;
+          this.height = 36;
+        } else if (type === 2) {
+          this.width = 38;
+          this.height = 34;
+        } else {
+          this.width = 20;
+          this.height = 48;
+        }
+        this.y = (osaka.groundY + osaka.height) - this.height;
+      }
+      update() {
+        this.x -= speed;
+      }
+      draw() {
+        ctx.fillStyle = '#e5e5e5';
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.fillStyle = '#111215';
+        ctx.fillRect(this.x + 3, this.y + 3, this.width - 6, this.height - 6);
+      }
+    }
+
+    // Suelo
+    let groundOffset = 0;
+    function drawGround() {
+      const lineY = osaka.groundY + osaka.height;
+      ctx.strokeStyle = '#33363f';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(0, lineY);
+      ctx.lineTo(canvas.width, lineY);
+      ctx.stroke();
+
+      // Pequeñas líneas de textura que se desplazan
+      groundOffset = (groundOffset + speed) % 20;
+      ctx.fillStyle = '#22252c';
+      for (let x = -groundOffset; x < canvas.width; x += 24) {
+        ctx.fillRect(x, lineY + 6, 8, 2);
+      }
+    }
+
+    // Marcador
+    function drawScore() {
+      ctx.fillStyle = '#9b9ea8';
+      ctx.font = 'bold 12px "Courier New", Courier, monospace';
+      ctx.textAlign = 'right';
+      
+      const sPad = String(Math.floor(score)).padStart(5, '0');
+      const hiPad = String(Math.floor(highScore)).padStart(5, '0');
+      ctx.fillText(`HI ${hiPad}  ${sPad}`, canvas.width - 15, 24);
+    }
+
+    // Control de inicio / salto
+    function triggerAction() {
+      if (!isPlaying) {
+        startGame();
+      } else if (isGameOver) {
+        restartGame();
       } else {
-        y = 130;
-        dy = 0;
-        isJumping = false;
+        osaka.jump();
+      }
+    }
+
+    function startGame() {
+      overlay.classList.add('hidden');
+      isPlaying = true;
+      isGameOver = false;
+      score = 0;
+      speed = 6.2;
+      obstacles = [];
+      spawnDistanceCounter = 0;
+      loop();
+    }
+
+    function restartGame() {
+      isGameOver = false;
+      score = 0;
+      speed = 6.2;
+      obstacles = [];
+      spawnDistanceCounter = 0;
+      osaka.y = osaka.groundY;
+      osaka.dy = 0;
+      osaka.isGrounded = true;
+      loop();
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' || e.code === 'ArrowUp') {
+        e.preventDefault();
+        triggerAction();
+      }
+    });
+
+    canvas.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      triggerAction();
+    });
+
+    // Bucle principal
+    function loop() {
+      if (!isPlaying) return;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawGround();
+      osaka.update();
+      osaka.draw();
+
+      if (!isGameOver) {
+        // Aumentar puntuación y velocidad gradualmente
+        score += 0.15;
+        if (speed < 13.5) {
+          speed += 0.0018; // Aceleración suave pero constante
+        }
+
+        // Generar obstáculos con intervalos aleatorios calculados
+        spawnDistanceCounter++;
+        if (spawnDistanceCounter > minSpawnInterval) {
+          if (Math.random() < 0.06) {
+            const types = [1, 1, 2, 3];
+            const chosenType = types[Math.floor(Math.random() * types.length)];
+            obstacles.push(new Obstacle(chosenType));
+            spawnDistanceCounter = 0;
+            // Reducir intervalo conforme la velocidad sube
+            minSpawnInterval = Math.max(45, 90 - Math.floor(speed * 3.5));
+          }
+        }
+
+        // Actualizar y chequear colisiones
+        for (let i = obstacles.length - 1; i >= 0; i--) {
+          const obs = obstacles[i];
+          obs.update();
+          obs.draw();
+
+          // Hitbox ajustada al cuerpo de Osaka
+          const padX = 10;
+          const padY = 6;
+          if (
+            osaka.x + padX < obs.x + obs.width &&
+            osaka.x + osaka.width - padX > obs.x &&
+            osaka.y + padY < obs.y + obs.height &&
+            osaka.y + osaka.height > obs.y
+          ) {
+            isGameOver = true;
+            if (score > highScore) {
+              highScore = Math.floor(score);
+              localStorage.setItem('valkyrie_hi', highScore);
+            }
+          }
+
+          if (obs.x + obs.width < 0) {
+            obstacles.splice(i, 1);
+          }
+        }
+      } else {
+        // Dibujar todos los obstáculos estáticos en Game Over
+        obstacles.forEach(o => o.draw());
+
+        // Cartel Game Over estilizado
+        ctx.fillStyle = 'rgba(11, 12, 14, 0.7)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 18px -apple-system, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('GAME OVER', canvas.width / 2, 105);
+
+        ctx.fillStyle = '#8f93a0';
+        ctx.font = '12px "Courier New", monospace';
+        ctx.fillText('PULSA ESPACIO O TOCA PARA REINTENTAR', canvas.width / 2, 135);
       }
 
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(40, y, 20, 30); // Placeholder de Osaka
+      drawScore();
 
-      requestAnimationFrame(gameLoop);
+      if (!isGameOver) {
+        requestAnimationFrame(loop);
+      }
     }
-    gameLoop();
   </script>
 </body>
 </html>
