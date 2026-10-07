@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>valkyrie.pe // archive</title>
   <style>
-    /* --- CONFIGURACIÓN BASE Y FONDO --- */
+    /* --- CONFIGURACIÓN BASE Y AERO GLASS REAL --- */
     :root {
-      --glass-base: rgba(18, 20, 24, 0.88);
-      --glass-panel: rgba(12, 14, 16, 0.75);
-      --glass-border: rgba(255, 255, 255, 0.18);
-      --text-main: #f0f0f0;
-      --text-muted: #9aa0a6;
-      --accent-glow: rgba(255, 255, 255, 0.12);
+      --glass-window: rgba(14, 16, 20, 0.48);
+      --glass-inner: rgba(10, 12, 16, 0.38);
+      --glass-card: rgba(16, 18, 24, 0.55);
+      --glass-border: rgba(255, 255, 255, 0.22);
+      --text-main: #f5f5f5;
+      --text-muted: #a5abb6;
     }
 
     * {
@@ -23,7 +23,7 @@
     }
 
     body {
-      background-color: #121316;
+      background-color: #0e1014;
       background-image: url('bg.jpg');
       background-size: cover;
       background-position: center;
@@ -45,17 +45,17 @@
       }
     }
 
-    /* --- VENTANA PRINCIPAL ESTILO FRUTIGER AERO --- */
+    /* VENTANA ESTILO FRUTIGER AERO TRANSLÚCIDA */
     .aero-window {
       width: 100%;
       max-width: 1040px;
       min-height: 640px;
-      background: var(--glass-base);
+      background: var(--glass-window);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--glass-border);
       border-radius: 16px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.28);
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -63,13 +63,13 @@
 
     /* ENCABEZADO GLOSSY */
     .window-header {
-      background: linear-gradient(180deg, rgba(60, 65, 75, 0.7) 0%, rgba(25, 28, 33, 0.85) 50%, rgba(15, 17, 20, 0.95) 100%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(20, 24, 30, 0.6) 55%, rgba(10, 12, 16, 0.75) 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       padding: 14px 25px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
     }
 
     .brand-title {
@@ -77,26 +77,30 @@
       font-size: 1.6rem;
       letter-spacing: 1.5px;
       color: #ffffff;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
       font-weight: 700;
     }
 
-    .btn-ig {
-      padding: 7px 16px;
-      background: linear-gradient(180deg, #323640 0%, #1c1e24 100%);
-      border: 1px solid #4a505e;
+    .header-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-link {
+      padding: 7px 14px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(25, 28, 35, 0.7) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 6px;
-      color: #e5e5e5;
+      color: #eaeaea;
       font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 0.5px;
       text-decoration: none;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 6px rgba(0,0,0,0.6);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
       transition: all 0.15s ease;
     }
 
-    .btn-ig:hover {
-      background: linear-gradient(180deg, #404552 0%, #24272e 100%);
+    .btn-link:hover {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(35, 40, 50, 0.8) 100%);
       color: #fff;
     }
 
@@ -104,14 +108,14 @@
     .window-body {
       display: flex;
       flex: 1;
-      background: var(--glass-panel);
+      background: var(--glass-inner);
     }
 
-    /* SIDEBAR CON BOTONES AERO */
+    /* SIDEBAR CON CRISTAL */
     .sidebar {
       width: 180px;
-      background: linear-gradient(90deg, rgba(20, 22, 26, 0.6) 0%, rgba(12, 14, 16, 0.8) 100%);
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(12, 14, 18, 0.45);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
       padding: 20px 14px;
       display: flex;
       flex-direction: column;
@@ -122,8 +126,8 @@
     .nav-btn {
       width: 100%;
       padding: 10px 16px;
-      background: linear-gradient(180deg, #282b33 0%, #17191e 100%);
-      border: 1px solid #3d424e;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(20, 24, 30, 0.6) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 7px;
       color: var(--text-main);
       font-size: 0.88rem;
@@ -131,23 +135,23 @@
       letter-spacing: 1px;
       text-align: left;
       transition: all 0.15s ease;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 3px 6px rgba(0,0,0,0.4);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 3px 6px rgba(0,0,0,0.3);
     }
 
     .nav-btn:hover {
-      background: linear-gradient(180deg, #353945 0%, #20232a 100%);
-      border-color: #525866;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(30, 35, 45, 0.7) 100%);
+      border-color: rgba(255, 255, 255, 0.3);
       color: #fff;
     }
 
     .nav-btn.active {
-      background: linear-gradient(180deg, #121316 0%, #292c34 100%);
-      border-color: #636a7a;
+      background: linear-gradient(180deg, rgba(10, 12, 16, 0.7) 0%, rgba(35, 40, 50, 0.7) 100%);
+      border-color: rgba(255, 255, 255, 0.35);
       color: #fff;
-      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.8);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7);
     }
 
-    /* ÁREA DE CONTENIDO */
+    /* ÁREA DE CONTENIDO TRANSLÚCIDA */
     .content-area {
       flex: 1;
       padding: 26px 30px;
@@ -174,12 +178,13 @@
       letter-spacing: 1.5px;
       margin-bottom: 20px;
       text-transform: uppercase;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       padding-bottom: 8px;
       color: #ffffff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
     }
 
-    /* --- PESTAÑA: JUEGO --- */
+    /* --- MINIJUEGO: FONDO BLANCO Y MARCADOR --- */
     .game-wrapper {
       position: relative;
       width: 100%;
@@ -189,12 +194,12 @@
 
     canvas {
       width: 100%;
-      height: 260px;
-      background: rgba(8, 9, 11, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      height: 250px;
+      background: #ffffff; /* FONDO BLANCO PURO */
+      border: 2px solid rgba(0, 0, 0, 0.8);
       border-radius: 8px;
       display: block;
-      box-shadow: inset 0 3px 12px rgba(0,0,0,0.9);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
       touch-action: none;
     }
 
@@ -208,7 +213,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: rgba(10, 11, 14, 0.7);
+      background: rgba(255, 255, 255, 0.7);
       border-radius: 8px;
       backdrop-filter: blur(2px);
     }
@@ -218,10 +223,10 @@
     }
 
     .play-btn-big {
-      background: linear-gradient(180deg, #323640 0%, #1a1c22 100%);
-      border: 1px solid #4f5564;
+      background: linear-gradient(180deg, #222 0%, #000 100%);
+      border: 1px solid #444;
       color: #ffffff;
-      padding: 12px 30px;
+      padding: 12px 32px;
       font-size: 1.1rem;
       font-weight: 700;
       letter-spacing: 2px;
@@ -229,13 +234,13 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 6px 16px rgba(0,0,0,0.7);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
       transition: all 0.15s ease;
     }
 
     .play-btn-big:hover {
-      transform: scale(1.04);
-      background: linear-gradient(180deg, #3d424e 0%, #20232a 100%);
+      transform: scale(1.05);
+      background: #000;
     }
 
     .play-btn-big svg {
@@ -244,33 +249,34 @@
       fill: #ffffff;
     }
 
-    /* --- PESTAÑA: FIGURAS Y ROPA --- */
+    /* --- TARJETAS DE STOCK CON BOTÓN DE MENSAJE --- */
     .items-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 18px;
     }
 
     .card {
-      background: rgba(20, 22, 28, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--glass-card);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 8px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
     }
 
     .card-img-placeholder {
       width: 100%;
-      height: 210px;
-      background: rgba(10, 11, 14, 0.5);
+      height: 200px;
+      background: rgba(0, 0, 0, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--text-muted);
       font-size: 0.85rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       background-size: cover;
       background-position: center;
     }
@@ -279,7 +285,7 @@
       padding: 12px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
     }
 
     .card-name {
@@ -288,13 +294,33 @@
       color: #fff;
     }
 
-    .card-status {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      color: #8c92a0;
+    .card-price {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #9cd4ff;
     }
 
-    /* --- PESTAÑA: BLOG --- */
+    .card-btn {
+      margin-top: 6px;
+      padding: 8px 10px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(20, 24, 30, 0.7) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      display: block;
+      transition: all 0.15s ease;
+    }
+
+    .card-btn:hover {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    /* --- BLOG --- */
     .blog-feed {
       display: flex;
       flex-direction: column;
@@ -302,18 +328,18 @@
     }
 
     .blog-post {
-      background: rgba(20, 22, 28, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--glass-card);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 8px;
-      padding: 16px 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      padding: 18px 22px;
+      backdrop-filter: blur(6px);
     }
 
     .post-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       padding-bottom: 6px;
       margin-bottom: 10px;
     }
@@ -333,17 +359,18 @@
     .post-body {
       font-size: 0.85rem;
       line-height: 1.5;
-      color: #d2d5dc;
+      color: #d8dbe2;
     }
 
-    /* --- PESTAÑA: CHAT GLOBAL --- */
+    /* --- CBOX CHAT --- */
     .chat-container {
       width: 100%;
       height: 480px;
-      background: rgba(10, 11, 14, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(10, 12, 16, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 8px;
       overflow: hidden;
+      backdrop-filter: blur(6px);
     }
 
     .chat-container iframe {
@@ -361,7 +388,7 @@
         width: 100%;
         flex-direction: row;
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         overflow-x: auto;
       }
       .nav-btn {
@@ -378,10 +405,12 @@
 
   <div class="aero-window">
     
-    <!-- Encabezado de la ventana -->
     <header class="window-header">
       <h1 class="brand-title">valkyrie.pe</h1>
-      <a href="https://instagram.com/valkyrie.pe" target="_blank" class="btn-ig">IG: @valkyrie.pe</a>
+      <div class="header-links">
+        <a href="https://m.me/61594882152570" target="_blank" class="btn-link">Messenger</a>
+        <a href="https://instagram.com/valkyrie.pe" target="_blank" class="btn-link">Instagram</a>
+      </div>
     </header>
 
     <div class="window-body">
@@ -395,61 +424,68 @@
         <button class="nav-btn" onclick="openTab(event, 'tab-chat')">chat</button>
       </nav>
 
-      <!-- Área de Contenido -->
       <main class="content-area">
 
-        <!-- 1. JUGAR -->
+        <!-- 1. JUEGO (FONDO BLANCO, FÍSICAS RÁPIDAS Y ALTA DIFICULTAD) -->
         <section id="tab-jugar" class="tab-content active">
           <div class="game-wrapper">
-            <canvas id="gameCanvas" width="760" height="260"></canvas>
+            <canvas id="gameCanvas" width="760" height="250"></canvas>
             
             <div id="playOverlay" class="play-overlay">
               <button class="play-btn-big" onclick="startGame()">
                 <svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
                 PLAY
               </button>
-              <p style="font-size:0.75rem; color:#888; margin-top:12px;">[ESPACIO] o toca la pantalla para saltar</p>
+              <p style="font-size:0.75rem; color:#444; margin-top:12px; font-weight:600;">[ESPACIO / TOCAR] para saltar</p>
             </div>
           </div>
         </section>
 
-        <!-- 2. FIGURAS -->
+        <!-- 2. FIGURAS (CON BOTÓN A MESSENGER) -->
         <section id="tab-figuras" class="tab-content">
-          <h2 class="section-title">Figuras // Import & Stock</h2>
+          <h2 class="section-title">Figuras // Stock</h2>
           <div class="items-grid">
+            
             <div class="card">
-              <div class="card-img-placeholder">[Foto 5 Quintillizas Nendoroid]</div>
+              <div class="card-img-placeholder">[5 Quintillizas Nendoroid]</div>
               <div class="card-info">
-                <span class="card-name">Set Nendoroid Quintillizas (Good Smile)</span>
-                <span class="card-status">Stock: S/. 1,500</span>
+                <span class="card-name">Set Nendoroids Good Smile</span>
+                <span class="card-price">S/. 1,500 (Set x5)</span>
+                <a href="https://m.me/61594882152570" target="_blank" class="card-btn">Pedir por Messenger ↗</a>
               </div>
             </div>
+
             <div class="card">
-              <div class="card-img-placeholder">[Foto 5 Quintillizas Kyunties]</div>
+              <div class="card-img-placeholder">[5 Quintillizas Kyunties]</div>
               <div class="card-info">
                 <span class="card-name">Set Kyunties Nurse Ver. (Bandai)</span>
-                <span class="card-status">Stock: S/. 350</span>
+                <span class="card-price">S/. 350 (Set x5)</span>
+                <a href="https://m.me/61594882152570" target="_blank" class="card-btn">Pedir por Messenger ↗</a>
               </div>
             </div>
+
             <div class="card">
-              <div class="card-img-placeholder">[Foto 5 Quintillizas SPM]</div>
+              <div class="card-img-placeholder">[5 Quintillizas SPM]</div>
               <div class="card-info">
                 <span class="card-name">Set SPM Sega Completo</span>
-                <span class="card-status">Stock: S/. 350</span>
+                <span class="card-price">S/. 350 (Set x5)</span>
+                <a href="https://m.me/61594882152570" target="_blank" class="card-btn">Pedir por Messenger ↗</a>
               </div>
             </div>
+
           </div>
         </section>
 
-        <!-- 3. ROPA -->
+        <!-- 3. ROPA (CON BOTÓN A MESSENGER) -->
         <section id="tab-ropa" class="tab-content">
-          <h2 class="section-title">Prendas // Archivo</h2>
+          <h2 class="section-title">Prendas // Colección</h2>
           <div class="items-grid">
             <div class="card">
               <div class="card-img-placeholder">[Prenda #01]</div>
               <div class="card-info">
-                <span class="card-name">Custom Anime Tee</span>
-                <span class="card-status">Próximamente</span>
+                <span class="card-name">Custom Anime Tee #01</span>
+                <span class="card-price">Consultar</span>
+                <a href="https://m.me/61594882152570" target="_blank" class="card-btn">Consultar por Messenger ↗</a>
               </div>
             </div>
           </div>
@@ -457,34 +493,31 @@
 
         <!-- 4. ANIME -->
         <section id="tab-anime" class="tab-content">
-          <h2 class="section-title">Directorio & Enlaces</h2>
-          <p style="font-size:0.85rem; color:var(--text-muted);">Enlaces de referencia y bases de datos recomendadas.</p>
+          <h2 class="section-title">Enlaces & Directorio</h2>
+          <p style="font-size:0.85rem; color:var(--text-muted);">Próximamente directorio de fuentes y descargas recomendadas.</p>
         </section>
 
-        <!-- 5. BLOG -->
+        <!-- 5. BLOG (ACTUALIZABLE EN HTML) -->
         <section id="tab-blog" class="tab-content">
           <h2 class="section-title">Bitácora Personal</h2>
           <div class="blog-feed">
             <article class="blog-post">
               <div class="post-header">
-                <span class="post-title">Iniciando el archivo de importación // valkyrie.pe</span>
+                <span class="post-title">Llegaron los sets de Las Quintillizas // Japón</span>
                 <span class="post-date">OCTUBRE 2026</span>
               </div>
               <p class="post-body">
-                Comenzamos con la llegada de los sets de Las Quintillizas traídos directamente desde Japón mediante proxy. Cajas impecables y stock listo para Lima.
+                Comenzamos con la llegada de los sets completos de Las Quintillizas traídos con ZenMarket. Cajas en perfecto estado protegidas de origen y listas para entrega en Lima.
               </p>
             </article>
           </div>
         </section>
 
-        <!-- 6. CHAT GLOBAL -->
+        <!-- 6. CHAT GLOBAL CBOX EMBEBIDO -->
         <section id="tab-chat" class="tab-content">
-          <h2 class="section-title">Global Chat // Cbox</h2>
+          <h2 class="section-title">Global Chat // Live</h2>
           <div class="chat-container">
-            <!-- Marco listo para tu widget de Cbox.ws -->
-            <p style="text-align:center; padding-top:200px; color:var(--text-muted); font-size:0.85rem;">
-              Crea tu chatbox gratis en <a href="https://cbox.ws" target="_blank" style="color:#fff;">cbox.ws</a> y pega el código aquí dentro.
-            </p>
+            <iframe src="https://my.cbox.ws/itsuki606" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
           </div>
         </section>
 
@@ -492,7 +525,7 @@
     </div>
   </div>
 
-  <!-- LÓGICA DEL JUEGO CON SPRITES NATIVOS -->
+  <!-- SCRIPT CON FÍSICAS REHECHAS (DINO CHROME + MÁS VELOCIDAD Y OBSTÁCULOS) -->
   <script>
     function openTab(evt, tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
@@ -505,7 +538,6 @@
     const ctx = canvas.getContext('2d');
     const overlay = document.getElementById('playOverlay');
 
-    // Carga directa de imágenes sin alterar píxeles ni proporciones
     const imgRun = new Image();
     imgRun.src = 'osaka_run.png';
 
@@ -516,24 +548,27 @@
     let isGameOver = false;
     let score = 0;
     let highScore = localStorage.getItem('valkyrie_hi') || 0;
-    let speed = 6.2;
-    let spawnCounter = 0;
-    let minSpawnInterval = 80;
+    
+    // Configuración de dificultad rápida
+    let speed = 7.5; // Comienza con velocidad ágil
+    let spawnTimer = 0;
+    let nextSpawnDistance = 60;
 
+    // FÍSICAS ESTILO DINOSAURIO: Gravedad alta y salto con respuesta instantánea
     const osaka = {
-      x: 60,
-      y: 160,
+      x: 65,
+      y: 145,
       width: 48,
-      height: 64,
+      height: 65,
       dy: 0,
-      jumpVelocity: -12.8,
-      gravity: 0.72,
-      groundY: 160,
+      jumpForce: -14.2, // Salto fuerte
+      gravity: 0.95,    // Caída rápida, no flota
+      groundY: 145,
       isGrounded: true,
       
       jump() {
         if (this.isGrounded) {
-          this.dy = this.jumpVelocity;
+          this.dy = this.jumpForce;
           this.isGrounded = false;
         }
       },
@@ -553,8 +588,7 @@
         if (curImg.complete && curImg.naturalWidth !== 0) {
           ctx.drawImage(curImg, this.x, this.y, this.width, this.height);
         } else {
-          // Placeholder por si tarda en cargar
-          ctx.fillStyle = '#ffffff';
+          ctx.fillStyle = '#000000';
           ctx.fillRect(this.x, this.y, this.width, this.height);
         }
       }
@@ -563,16 +597,21 @@
     let obstacles = [];
 
     class Obstacle {
-      constructor(type) {
+      constructor() {
         this.x = canvas.width;
-        if (type === 1) {
-          this.width = 18;
+        // Tipos de obstáculos con dificultad variable
+        const rand = Math.random();
+        if (rand < 0.4) {
+          // Bloque simple
+          this.width = 16;
           this.height = 36;
-        } else if (type === 2) {
-          this.width = 38;
-          this.height = 34;
+        } else if (rand < 0.75) {
+          // Bloque ancho (exige salto largo y preciso)
+          this.width = 34;
+          this.height = 36;
         } else {
-          this.width = 22;
+          // Obstáculo alto
+          this.width = 20;
           this.height = 50;
         }
         this.y = (osaka.groundY + osaka.height) - this.height;
@@ -581,17 +620,21 @@
         this.x -= speed;
       }
       draw() {
-        ctx.fillStyle = '#f0f0f0';
+        // Dibujado en negro sobre fondo blanco
+        ctx.fillStyle = '#000000';
         ctx.fillRect(this.x, this.y, this.width, this.height);
-        ctx.fillStyle = '#101216';
+        // Detalle interior en blanco
+        ctx.fillStyle = '#ffffff';
         ctx.fillRect(this.x + 3, this.y + 3, this.width - 6, this.height - 6);
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(this.x + 5, this.y + 5, this.width - 10, this.height - 10);
       }
     }
 
     let groundOffset = 0;
     function drawGround() {
       const lineY = osaka.groundY + osaka.height;
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+      ctx.strokeStyle = '#000000';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(0, lineY);
@@ -599,19 +642,19 @@
       ctx.stroke();
 
       groundOffset = (groundOffset + speed) % 24;
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+      ctx.fillStyle = '#666666';
       for (let x = -groundOffset; x < canvas.width; x += 24) {
         ctx.fillRect(x, lineY + 6, 8, 2);
       }
     }
 
     function drawScore() {
-      ctx.fillStyle = '#a0a5b0';
-      ctx.font = 'bold 13px "Courier New", monospace';
+      ctx.fillStyle = '#000000';
+      ctx.font = 'bold 14px "Courier New", monospace';
       ctx.textAlign = 'right';
       const sPad = String(Math.floor(score)).padStart(5, '0');
       const hiPad = String(Math.floor(highScore)).padStart(5, '0');
-      ctx.fillText(`HI ${hiPad}  ${sPad}`, canvas.width - 15, 26);
+      ctx.fillText(`HI ${hiPad}  ${sPad}`, canvas.width - 18, 28);
     }
 
     function triggerAction() {
@@ -625,18 +668,20 @@
       isPlaying = true;
       isGameOver = false;
       score = 0;
-      speed = 6.2;
+      speed = 7.5;
       obstacles = [];
-      spawnCounter = 0;
+      spawnTimer = 0;
+      nextSpawnDistance = 50;
       loop();
     }
 
     function restartGame() {
       isGameOver = false;
       score = 0;
-      speed = 6.2;
+      speed = 7.5;
       obstacles = [];
-      spawnCounter = 0;
+      spawnTimer = 0;
+      nextSpawnDistance = 50;
       osaka.y = osaka.groundY;
       osaka.dy = 0;
       osaka.isGrounded = true;
@@ -658,23 +703,30 @@
     function loop() {
       if (!isPlaying) return;
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // FONDO BLANCO EN EL CANVAS
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
       drawGround();
       osaka.update();
       osaka.draw();
 
       if (!isGameOver) {
-        score += 0.15;
-        if (speed < 14) speed += 0.0018;
+        score += 0.2;
+        // Aumento constante de velocidad
+        if (speed < 16) {
+          speed += 0.003;
+        }
 
-        spawnCounter++;
-        if (spawnCounter > minSpawnInterval) {
-          if (Math.random() < 0.07) {
-            const types = [1, 1, 2, 3];
-            obstacles.push(new Obstacle(types[Math.floor(Math.random() * types.length)]));
-            spawnCounter = 0;
-            minSpawnInterval = Math.max(45, 85 - Math.floor(speed * 3.2));
-          }
+        // Generador de obstáculos más continuo y desafiante
+        spawnTimer++;
+        if (spawnTimer >= nextSpawnDistance) {
+          obstacles.push(new Obstacle());
+          spawnTimer = 0;
+          // El espacio entre obstáculos disminuye conforme la velocidad sube
+          const minGap = Math.max(30, 65 - Math.floor(speed * 2.2));
+          const maxGap = Math.max(50, 105 - Math.floor(speed * 2.2));
+          nextSpawnDistance = Math.floor(Math.random() * (maxGap - minGap)) + minGap;
         }
 
         for (let i = obstacles.length - 1; i >= 0; i--) {
@@ -682,8 +734,9 @@
           obs.update();
           obs.draw();
 
-          const padX = 10;
-          const padY = 6;
+          // Hitbox ajustada al cuerpo de Osaka
+          const padX = 12;
+          const padY = 8;
           if (
             osaka.x + padX < obs.x + obs.width &&
             osaka.x + osaka.width - padX > obs.x &&
@@ -704,17 +757,17 @@
       } else {
         obstacles.forEach(o => o.draw());
 
-        ctx.fillStyle = 'rgba(10, 11, 14, 0.75)';
+        // Pantalla de Game Over
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = '#ffffff';
-        ctx.font = 'bold 18px -apple-system, sans-serif';
+        ctx.fillStyle = '#000000';
+        ctx.font = 'bold 20px -apple-system, sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText('GAME OVER', canvas.width / 2, 115);
+        ctx.fillText('GAME OVER', canvas.width / 2, 110);
 
-        ctx.fillStyle = '#9095a2';
-        ctx.font = '12px "Courier New", monospace';
-        ctx.fillText('PULSA ESPACIO O TOCA PARA REINTENTAR', canvas.width / 2, 145);
+        ctx.font = '13px "Courier New", monospace';
+        ctx.fillText('PULSA ESPACIO O TOCA PARA REINTENTAR', canvas.width / 2, 140);
       }
 
       drawScore();
