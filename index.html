@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>valkyrie.pe</title>
+  <title>valkyrie.pe // archive</title>
   <style>
-    /* --- PALETA BASE AERO DARK --- */
+    /* --- CONFIGURACIÓN BASE Y FONDO --- */
     :root {
-      --bg-dark: #0d0e11;
-      --panel-bg: #16181c;
-      --panel-inner: #111215;
-      --border-outer: #33363f;
-      --border-inner: #22242a;
-      --text-main: #dedede;
-      --text-dim: #7f838d;
-      --highlight: #ffffff;
+      --glass-base: rgba(18, 20, 24, 0.88);
+      --glass-panel: rgba(12, 14, 16, 0.75);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --text-main: #f0f0f0;
+      --text-muted: #9aa0a6;
+      --accent-glow: rgba(255, 255, 255, 0.12);
     }
 
     * {
@@ -25,16 +23,20 @@
     }
 
     body {
-      background-color: var(--bg-dark);
-      background-image: radial-gradient(circle at 50% 15%, #1a1d24 0%, var(--bg-dark) 85%);
+      background-color: #121316;
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       color: var(--text-main);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       padding: 30px 15px;
-      overflow-x: hidden;
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -43,109 +45,114 @@
       }
     }
 
-    /* VENTANA PRINCIPAL */
+    /* --- VENTANA PRINCIPAL ESTILO FRUTIGER AERO --- */
     .aero-window {
       width: 100%;
-      max-width: 860px;
-      background: var(--panel-bg);
-      border: 1px solid var(--border-outer);
-      border-radius: 12px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-      overflow: hidden;
+      max-width: 1040px;
+      min-height: 640px;
+      background: var(--glass-base);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.25);
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
 
-    /* HEADER: SOLO VALKYRIE.PE Y BOTÓN IG */
+    /* ENCABEZADO GLOSSY */
     .window-header {
-      background: linear-gradient(180deg, #272a31 0%, #17181c 60%, #111215 100%);
-      border-bottom: 1px solid var(--border-inner);
-      padding: 14px 22px;
+      background: linear-gradient(180deg, rgba(60, 65, 75, 0.7) 0%, rgba(25, 28, 33, 0.85) 50%, rgba(15, 17, 20, 0.95) 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 25px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 
     .brand-title {
       font-family: "Georgia", serif;
-      font-size: 1.45rem;
-      letter-spacing: 1px;
+      font-size: 1.6rem;
+      letter-spacing: 1.5px;
       color: #ffffff;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
       font-weight: 700;
     }
 
     .btn-ig {
-      padding: 7px 14px;
-      background: linear-gradient(180deg, #2c2f37 0%, #1a1b1f 100%);
-      border: 1px solid #434752;
+      padding: 7px 16px;
+      background: linear-gradient(180deg, #323640 0%, #1c1e24 100%);
+      border: 1px solid #4a505e;
       border-radius: 6px;
-      color: #e0e0e0;
+      color: #e5e5e5;
       font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.5px;
       text-decoration: none;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 5px rgba(0,0,0,0.5);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 6px rgba(0,0,0,0.6);
       transition: all 0.15s ease;
     }
 
     .btn-ig:hover {
-      background: linear-gradient(180deg, #373b45 0%, #202227 100%);
+      background: linear-gradient(180deg, #404552 0%, #24272e 100%);
       color: #fff;
-      border-color: #585d6b;
     }
 
-    /* CUERPO: SIDEBAR + CONTENIDO */
+    /* CUERPO PRINCIPAL */
     .window-body {
       display: flex;
-      min-height: 460px;
-      background: var(--panel-inner);
+      flex: 1;
+      background: var(--glass-panel);
     }
 
+    /* SIDEBAR CON BOTONES AERO */
     .sidebar {
-      width: 160px;
-      background: linear-gradient(90deg, #15171a 0%, #111215 100%);
-      border-right: 1px solid var(--border-inner);
-      padding: 18px 12px;
+      width: 180px;
+      background: linear-gradient(90deg, rgba(20, 22, 26, 0.6) 0%, rgba(12, 14, 16, 0.8) 100%);
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 20px 14px;
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 10px;
       flex-shrink: 0;
     }
 
     .nav-btn {
       width: 100%;
-      padding: 9px 14px;
-      background: linear-gradient(180deg, #24272e 0%, #17181c 100%);
-      border: 1px solid #33363f;
-      border-radius: 6px;
+      padding: 10px 16px;
+      background: linear-gradient(180deg, #282b33 0%, #17191e 100%);
+      border: 1px solid #3d424e;
+      border-radius: 7px;
       color: var(--text-main);
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 600;
       letter-spacing: 1px;
       text-align: left;
       transition: all 0.15s ease;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 2px 4px rgba(0,0,0,0.4);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 3px 6px rgba(0,0,0,0.4);
     }
 
     .nav-btn:hover {
-      background: linear-gradient(180deg, #2e323b 0%, #1d1f25 100%);
+      background: linear-gradient(180deg, #353945 0%, #20232a 100%);
+      border-color: #525866;
       color: #fff;
-      border-color: #4a4f5c;
     }
 
     .nav-btn.active {
-      background: linear-gradient(180deg, #141517 0%, #252830 100%);
-      border-color: #5d6270;
+      background: linear-gradient(180deg, #121316 0%, #292c34 100%);
+      border-color: #636a7a;
       color: #fff;
-      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.7);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.8);
     }
 
+    /* ÁREA DE CONTENIDO */
     .content-area {
       flex: 1;
-      padding: 24px;
+      padding: 26px 30px;
       overflow-y: auto;
+      max-height: 570px;
     }
 
     .tab-content {
@@ -154,28 +161,43 @@
 
     .tab-content.active {
       display: block;
+      animation: fadeIn 0.18s ease-in-out;
     }
 
-    /* CONTENEDOR DEL JUEGO */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(3px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 8px;
+      color: #ffffff;
+    }
+
+    /* --- PESTAÑA: JUEGO --- */
     .game-wrapper {
       position: relative;
       width: 100%;
-      max-width: 620px;
+      max-width: 760px;
       margin: 0 auto;
     }
 
     canvas {
       width: 100%;
-      height: 240px;
-      background-color: #0b0c0e;
-      border: 1px solid var(--border-inner);
+      height: 260px;
+      background: rgba(8, 9, 11, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 8px;
       display: block;
-      box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
+      box-shadow: inset 0 3px 12px rgba(0,0,0,0.9);
       touch-action: none;
     }
 
-    /* BOTÓN SUPERPUESTO DE PLAY INICIAL */
     .play-overlay {
       position: absolute;
       top: 0;
@@ -186,10 +208,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: rgba(11, 12, 14, 0.75);
+      background: rgba(10, 11, 14, 0.7);
       border-radius: 8px;
       backdrop-filter: blur(2px);
-      transition: opacity 0.2s ease;
     }
 
     .play-overlay.hidden {
@@ -197,10 +218,10 @@
     }
 
     .play-btn-big {
-      background: linear-gradient(180deg, #2c2f37 0%, #15161a 100%);
-      border: 1px solid #4a4f5c;
+      background: linear-gradient(180deg, #323640 0%, #1a1c22 100%);
+      border: 1px solid #4f5564;
       color: #ffffff;
-      padding: 12px 28px;
+      padding: 12px 30px;
       font-size: 1.1rem;
       font-weight: 700;
       letter-spacing: 2px;
@@ -208,14 +229,13 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 6px 15px rgba(0,0,0,0.6);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 6px 16px rgba(0,0,0,0.7);
       transition: all 0.15s ease;
     }
 
     .play-btn-big:hover {
       transform: scale(1.04);
-      background: linear-gradient(180deg, #373b45 0%, #1c1e23 100%);
-      border-color: #63697a;
+      background: linear-gradient(180deg, #3d424e 0%, #20232a 100%);
     }
 
     .play-btn-big svg {
@@ -224,73 +244,116 @@
       fill: #ffffff;
     }
 
-    .game-hint {
-      font-size: 0.75rem;
-      color: var(--text-dim);
-      margin-top: 12px;
-      letter-spacing: 1px;
-    }
-
-    /* TARJETAS DE FIGURAS Y ROPA */
-    .section-title {
-      font-size: 1.1rem;
-      letter-spacing: 1.5px;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--border-inner);
-      padding-bottom: 6px;
-      color: var(--highlight);
-    }
-
+    /* --- PESTAÑA: FIGURAS Y ROPA --- */
     .items-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 18px;
     }
 
     .card {
-      background: #17181d;
-      border: 1px solid var(--border-inner);
+      background: rgba(20, 22, 28, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 8px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
     }
 
     .card-img-placeholder {
       width: 100%;
-      height: 190px;
-      background: #0d0e11;
+      height: 210px;
+      background: rgba(10, 11, 14, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-dim);
-      font-size: 0.8rem;
-      border-bottom: 1px solid var(--border-inner);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background-size: cover;
+      background-position: center;
     }
 
     .card-info {
-      padding: 10px;
+      padding: 12px;
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
 
     .card-name {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: #fff;
     }
 
     .card-status {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      color: #8c909b;
+      color: #8c92a0;
+    }
+
+    /* --- PESTAÑA: BLOG --- */
+    .blog-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .blog-post {
+      background: rgba(20, 22, 28, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 16px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .post-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+    }
+
+    .post-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .post-date {
+      font-size: 0.75rem;
+      font-family: monospace;
+      color: var(--text-muted);
+    }
+
+    .post-body {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #d2d5dc;
+    }
+
+    /* --- PESTAÑA: CHAT GLOBAL --- */
+    .chat-container {
+      width: 100%;
+      height: 480px;
+      background: rgba(10, 11, 14, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .chat-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     /* RESPONSIVE MÓVIL */
-    @media (max-width: 680px) {
+    @media (max-width: 768px) {
       .window-body {
         flex-direction: column;
       }
@@ -298,12 +361,15 @@
         width: 100%;
         flex-direction: row;
         border-right: none;
-        border-bottom: 1px solid var(--border-inner);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         overflow-x: auto;
       }
       .nav-btn {
         text-align: center;
         padding: 8px 12px;
+      }
+      .content-area {
+        padding: 16px;
       }
     }
   </style>
@@ -312,7 +378,7 @@
 
   <div class="aero-window">
     
-    <!-- Encabezado con solo valkyrie.pe e Instagram -->
+    <!-- Encabezado de la ventana -->
     <header class="window-header">
       <h1 class="brand-title">valkyrie.pe</h1>
       <a href="https://instagram.com/valkyrie.pe" target="_blank" class="btn-ig">IG: @valkyrie.pe</a>
@@ -325,6 +391,8 @@
         <button class="nav-btn" onclick="openTab(event, 'tab-figuras')">figuras</button>
         <button class="nav-btn" onclick="openTab(event, 'tab-ropa')">ropa</button>
         <button class="nav-btn" onclick="openTab(event, 'tab-anime')">anime</button>
+        <button class="nav-btn" onclick="openTab(event, 'tab-blog')">blog</button>
+        <button class="nav-btn" onclick="openTab(event, 'tab-chat')">chat</button>
       </nav>
 
       <!-- Área de Contenido -->
@@ -333,28 +401,41 @@
         <!-- 1. JUGAR -->
         <section id="tab-jugar" class="tab-content active">
           <div class="game-wrapper">
-            <canvas id="gameCanvas" width="600" height="240"></canvas>
+            <canvas id="gameCanvas" width="760" height="260"></canvas>
             
-            <!-- Botón Inicial PLAY con triángulo -->
             <div id="playOverlay" class="play-overlay">
               <button class="play-btn-big" onclick="startGame()">
                 <svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
                 PLAY
               </button>
-              <p class="game-hint">[ESPACIO] o toca la pantalla para saltar</p>
+              <p style="font-size:0.75rem; color:#888; margin-top:12px;">[ESPACIO] o toca la pantalla para saltar</p>
             </div>
           </div>
         </section>
 
         <!-- 2. FIGURAS -->
         <section id="tab-figuras" class="tab-content">
-          <h2 class="section-title">Figuras // Archivo & Stock</h2>
-          <div class="items-grid" id="figuresGrid">
+          <h2 class="section-title">Figuras // Import & Stock</h2>
+          <div class="items-grid">
             <div class="card">
-              <div class="card-img-placeholder">[Foto Figura 1]</div>
+              <div class="card-img-placeholder">[Foto 5 Quintillizas Nendoroid]</div>
               <div class="card-info">
-                <span class="card-name">Figura #1</span>
-                <span class="card-status">En stock</span>
+                <span class="card-name">Set Nendoroid Quintillizas (Good Smile)</span>
+                <span class="card-status">Stock: S/. 1,500</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-img-placeholder">[Foto 5 Quintillizas Kyunties]</div>
+              <div class="card-info">
+                <span class="card-name">Set Kyunties Nurse Ver. (Bandai)</span>
+                <span class="card-status">Stock: S/. 350</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-img-placeholder">[Foto 5 Quintillizas SPM]</div>
+              <div class="card-info">
+                <span class="card-name">Set SPM Sega Completo</span>
+                <span class="card-status">Stock: S/. 350</span>
               </div>
             </div>
           </div>
@@ -362,13 +443,13 @@
 
         <!-- 3. ROPA -->
         <section id="tab-ropa" class="tab-content">
-          <h2 class="section-title">Prendas // Colección</h2>
-          <div class="items-grid" id="clothesGrid">
+          <h2 class="section-title">Prendas // Archivo</h2>
+          <div class="items-grid">
             <div class="card">
-              <div class="card-img-placeholder">[Foto Prenda 1]</div>
+              <div class="card-img-placeholder">[Prenda #01]</div>
               <div class="card-info">
-                <span class="card-name">Prenda #1</span>
-                <span class="card-status">Disponible</span>
+                <span class="card-name">Custom Anime Tee</span>
+                <span class="card-status">Próximamente</span>
               </div>
             </div>
           </div>
@@ -376,17 +457,43 @@
 
         <!-- 4. ANIME -->
         <section id="tab-anime" class="tab-content">
-          <h2 class="section-title">Links & Directorio</h2>
-          <p style="font-size:0.85rem; color:var(--text-dim);">Próximamente los links oficiales...</p>
+          <h2 class="section-title">Directorio & Enlaces</h2>
+          <p style="font-size:0.85rem; color:var(--text-muted);">Enlaces de referencia y bases de datos recomendadas.</p>
+        </section>
+
+        <!-- 5. BLOG -->
+        <section id="tab-blog" class="tab-content">
+          <h2 class="section-title">Bitácora Personal</h2>
+          <div class="blog-feed">
+            <article class="blog-post">
+              <div class="post-header">
+                <span class="post-title">Iniciando el archivo de importación // valkyrie.pe</span>
+                <span class="post-date">OCTUBRE 2026</span>
+              </div>
+              <p class="post-body">
+                Comenzamos con la llegada de los sets de Las Quintillizas traídos directamente desde Japón mediante proxy. Cajas impecables y stock listo para Lima.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 6. CHAT GLOBAL -->
+        <section id="tab-chat" class="tab-content">
+          <h2 class="section-title">Global Chat // Cbox</h2>
+          <div class="chat-container">
+            <!-- Marco listo para tu widget de Cbox.ws -->
+            <p style="text-align:center; padding-top:200px; color:var(--text-muted); font-size:0.85rem;">
+              Crea tu chatbox gratis en <a href="https://cbox.ws" target="_blank" style="color:#fff;">cbox.ws</a> y pega el código aquí dentro.
+            </p>
+          </div>
         </section>
 
       </main>
     </div>
   </div>
 
-  <!-- SCRIPT DEL JUEGO CON FÍSICAS ESTILO DINO Y SPRITES DE OSAKA -->
+  <!-- LÓGICA DEL JUEGO CON SPRITES NATIVOS -->
   <script>
-    // Cambio de pestañas
     function openTab(evt, tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
@@ -394,69 +501,34 @@
       evt.currentTarget.classList.add('active');
     }
 
-    // Canvas y Contexto
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
     const overlay = document.getElementById('playOverlay');
 
-    // Cargar y procesar imágenes quitando el fondo blanco automáticamente
-    function processImageTransparency(url) {
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.src = url;
-        img.onload = () => {
-          const c = document.createElement('canvas');
-          c.width = img.width;
-          c.height = img.height;
-          const cx = c.getContext('2d');
-          cx.drawImage(img, 0, 0);
-          
-          try {
-            const imgData = cx.getImageData(0, 0, c.width, c.height);
-            const d = imgData.data;
-            // Remover píxeles blancos del fondo (R, G, B > 235)
-            for (let i = 0; i < d.length; i += 4) {
-              if (d[i] > 235 && d[i+1] > 235 && d[i+2] > 235) {
-                d[i+3] = 0;
-              }
-            }
-            cx.putImageData(imgData, 0, 0);
-            const res = new Image();
-            res.src = c.toDataURL();
-            resolve(res);
-          } catch(e) {
-            resolve(img); // Fallback si CORS local
-          }
-        };
-        img.onerror = () => resolve(null);
-      });
-    }
+    // Carga directa de imágenes sin alterar píxeles ni proporciones
+    const imgRun = new Image();
+    imgRun.src = 'osaka_run.png';
 
-    let imgRun = null;
-    let imgJump = null;
+    const imgJump = new Image();
+    imgJump.src = 'osaka_jump.png';
 
-    processImageTransparency('osaka_run.png').then(img => imgRun = img);
-    processImageTransparency('osaka_jump.png').then(img => imgJump = img);
-
-    // Estado del juego
     let isPlaying = false;
     let isGameOver = false;
     let score = 0;
     let highScore = localStorage.getItem('valkyrie_hi') || 0;
-    let speed = 6;
-    let spawnDistanceCounter = 0;
-    let minSpawnInterval = 85;
+    let speed = 6.2;
+    let spawnCounter = 0;
+    let minSpawnInterval = 80;
 
-    // Osaka
     const osaka = {
-      x: 55,
-      y: 150,
-      width: 44,
-      height: 60,
+      x: 60,
+      y: 160,
+      width: 48,
+      height: 64,
       dy: 0,
-      jumpVelocity: -12.5,
+      jumpVelocity: -12.8,
       gravity: 0.72,
-      groundY: 150,
+      groundY: 160,
       isGrounded: true,
       
       jump() {
@@ -477,26 +549,21 @@
         }
       },
       draw() {
-        const currentImg = (!this.isGrounded) ? imgJump : imgRun;
-        if (currentImg && currentImg.complete) {
-          ctx.drawImage(currentImg, this.x, this.y, this.width, this.height);
+        const curImg = (!this.isGrounded) ? imgJump : imgRun;
+        if (curImg.complete && curImg.naturalWidth !== 0) {
+          ctx.drawImage(curImg, this.x, this.y, this.width, this.height);
         } else {
-          // Placeholder geométrico estilizado si las fotos aún no cargan
+          // Placeholder por si tarda en cargar
           ctx.fillStyle = '#ffffff';
-          ctx.fillRect(this.x + 8, this.y, 28, this.height);
-          ctx.fillStyle = '#000000';
-          ctx.fillRect(this.x + 14, this.y + 10, 4, 6);
-          ctx.fillRect(this.x + 26, this.y + 10, 4, 6);
+          ctx.fillRect(this.x, this.y, this.width, this.height);
         }
       }
     };
 
-    // Obstáculos
     let obstacles = [];
 
     class Obstacle {
       constructor(type) {
-        this.type = type; // 1: sencillo, 2: doble/ancho, 3: alto
         this.x = canvas.width;
         if (type === 1) {
           this.width = 18;
@@ -505,8 +572,8 @@
           this.width = 38;
           this.height = 34;
         } else {
-          this.width = 20;
-          this.height = 48;
+          this.width = 22;
+          this.height = 50;
         }
         this.y = (osaka.groundY + osaka.height) - this.height;
       }
@@ -514,52 +581,43 @@
         this.x -= speed;
       }
       draw() {
-        ctx.fillStyle = '#e5e5e5';
+        ctx.fillStyle = '#f0f0f0';
         ctx.fillRect(this.x, this.y, this.width, this.height);
-        ctx.fillStyle = '#111215';
+        ctx.fillStyle = '#101216';
         ctx.fillRect(this.x + 3, this.y + 3, this.width - 6, this.height - 6);
       }
     }
 
-    // Suelo
     let groundOffset = 0;
     function drawGround() {
       const lineY = osaka.groundY + osaka.height;
-      ctx.strokeStyle = '#33363f';
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(0, lineY);
       ctx.lineTo(canvas.width, lineY);
       ctx.stroke();
 
-      // Pequeñas líneas de textura que se desplazan
-      groundOffset = (groundOffset + speed) % 20;
-      ctx.fillStyle = '#22252c';
+      groundOffset = (groundOffset + speed) % 24;
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
       for (let x = -groundOffset; x < canvas.width; x += 24) {
         ctx.fillRect(x, lineY + 6, 8, 2);
       }
     }
 
-    // Marcador
     function drawScore() {
-      ctx.fillStyle = '#9b9ea8';
-      ctx.font = 'bold 12px "Courier New", Courier, monospace';
+      ctx.fillStyle = '#a0a5b0';
+      ctx.font = 'bold 13px "Courier New", monospace';
       ctx.textAlign = 'right';
-      
       const sPad = String(Math.floor(score)).padStart(5, '0');
       const hiPad = String(Math.floor(highScore)).padStart(5, '0');
-      ctx.fillText(`HI ${hiPad}  ${sPad}`, canvas.width - 15, 24);
+      ctx.fillText(`HI ${hiPad}  ${sPad}`, canvas.width - 15, 26);
     }
 
-    // Control de inicio / salto
     function triggerAction() {
-      if (!isPlaying) {
-        startGame();
-      } else if (isGameOver) {
-        restartGame();
-      } else {
-        osaka.jump();
-      }
+      if (!isPlaying) startGame();
+      else if (isGameOver) restartGame();
+      else osaka.jump();
     }
 
     function startGame() {
@@ -569,7 +627,7 @@
       score = 0;
       speed = 6.2;
       obstacles = [];
-      spawnDistanceCounter = 0;
+      spawnCounter = 0;
       loop();
     }
 
@@ -578,7 +636,7 @@
       score = 0;
       speed = 6.2;
       obstacles = [];
-      spawnDistanceCounter = 0;
+      spawnCounter = 0;
       osaka.y = osaka.groundY;
       osaka.dy = 0;
       osaka.isGrounded = true;
@@ -597,7 +655,6 @@
       triggerAction();
     });
 
-    // Bucle principal
     function loop() {
       if (!isPlaying) return;
 
@@ -607,32 +664,24 @@
       osaka.draw();
 
       if (!isGameOver) {
-        // Aumentar puntuación y velocidad gradualmente
         score += 0.15;
-        if (speed < 13.5) {
-          speed += 0.0018; // Aceleración suave pero constante
-        }
+        if (speed < 14) speed += 0.0018;
 
-        // Generar obstáculos con intervalos aleatorios calculados
-        spawnDistanceCounter++;
-        if (spawnDistanceCounter > minSpawnInterval) {
-          if (Math.random() < 0.06) {
+        spawnCounter++;
+        if (spawnCounter > minSpawnInterval) {
+          if (Math.random() < 0.07) {
             const types = [1, 1, 2, 3];
-            const chosenType = types[Math.floor(Math.random() * types.length)];
-            obstacles.push(new Obstacle(chosenType));
-            spawnDistanceCounter = 0;
-            // Reducir intervalo conforme la velocidad sube
-            minSpawnInterval = Math.max(45, 90 - Math.floor(speed * 3.5));
+            obstacles.push(new Obstacle(types[Math.floor(Math.random() * types.length)]));
+            spawnCounter = 0;
+            minSpawnInterval = Math.max(45, 85 - Math.floor(speed * 3.2));
           }
         }
 
-        // Actualizar y chequear colisiones
         for (let i = obstacles.length - 1; i >= 0; i--) {
           const obs = obstacles[i];
           obs.update();
           obs.draw();
 
-          // Hitbox ajustada al cuerpo de Osaka
           const padX = 10;
           const padY = 6;
           if (
@@ -653,21 +702,19 @@
           }
         }
       } else {
-        // Dibujar todos los obstáculos estáticos en Game Over
         obstacles.forEach(o => o.draw());
 
-        // Cartel Game Over estilizado
-        ctx.fillStyle = 'rgba(11, 12, 14, 0.7)';
+        ctx.fillStyle = 'rgba(10, 11, 14, 0.75)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         ctx.fillStyle = '#ffffff';
         ctx.font = 'bold 18px -apple-system, sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText('GAME OVER', canvas.width / 2, 105);
+        ctx.fillText('GAME OVER', canvas.width / 2, 115);
 
-        ctx.fillStyle = '#8f93a0';
+        ctx.fillStyle = '#9095a2';
         ctx.font = '12px "Courier New", monospace';
-        ctx.fillText('PULSA ESPACIO O TOCA PARA REINTENTAR', canvas.width / 2, 135);
+        ctx.fillText('PULSA ESPACIO O TOCA PARA REINTENTAR', canvas.width / 2, 145);
       }
 
       drawScore();
