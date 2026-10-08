@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>valkyrie.pe // archive</title>
   <style>
-    /* --- CONFIGURACIÓN BASE Y AERO GLASS REAL --- */
+    /* --- CRISTAL AERO ULTRA TRANSLÚCIDO --- */
     :root {
-      --glass-window: rgba(14, 16, 20, 0.48);
-      --glass-inner: rgba(10, 12, 16, 0.38);
-      --glass-card: rgba(16, 18, 24, 0.55);
-      --glass-border: rgba(255, 255, 255, 0.22);
-      --text-main: #f5f5f5;
-      --text-muted: #a5abb6;
+      --glass-window: rgba(10, 12, 16, 0.28);
+      --glass-inner: rgba(5, 7, 10, 0.15);
+      --glass-card: rgba(14, 16, 22, 0.32);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --text-main: #f0f0f0;
+      --text-muted: #b0b5c0;
     }
 
     * {
@@ -30,7 +30,7 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
       color: var(--text-main);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -45,31 +45,31 @@
       }
     }
 
-    /* VENTANA ESTILO FRUTIGER AERO TRANSLÚCIDA */
+    /* VENTANA PRINCIPAL */
     .aero-window {
       width: 100%;
       max-width: 1040px;
-      min-height: 640px;
+      min-height: 620px;
       background: var(--glass-window);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       border: 1px solid var(--glass-border);
-      border-radius: 16px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      border-radius: 14px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.3);
       display: flex;
       flex-direction: column;
       overflow: hidden;
     }
 
-    /* ENCABEZADO GLOSSY */
+    /* ENCABEZADO */
     .window-header {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(20, 24, 30, 0.6) 55%, rgba(10, 12, 16, 0.75) 100%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(15, 18, 24, 0.45) 100%);
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       padding: 14px 25px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 
     .brand-title {
@@ -77,7 +77,7 @@
       font-size: 1.6rem;
       letter-spacing: 1.5px;
       color: #ffffff;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
       font-weight: 700;
     }
 
@@ -87,36 +87,36 @@
     }
 
     .btn-link {
-      padding: 7px 14px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(25, 28, 35, 0.7) 100%);
+      padding: 7px 15px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(20, 24, 30, 0.5) 100%);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 6px;
-      color: #eaeaea;
+      color: #f0f0f0;
       font-size: 0.8rem;
       font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       transition: all 0.15s ease;
     }
 
     .btn-link:hover {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(35, 40, 50, 0.8) 100%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(30, 35, 45, 0.7) 100%);
       color: #fff;
     }
 
-    /* CUERPO PRINCIPAL */
+    /* CUERPO */
     .window-body {
       display: flex;
       flex: 1;
       background: var(--glass-inner);
     }
 
-    /* SIDEBAR CON CRISTAL */
+    /* SIDEBAR */
     .sidebar {
-      width: 180px;
-      background: rgba(12, 14, 18, 0.45);
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 20px 14px;
+      width: 170px;
+      background: rgba(10, 12, 16, 0.35);
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 20px 12px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -125,38 +125,38 @@
 
     .nav-btn {
       width: 100%;
-      padding: 10px 16px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(20, 24, 30, 0.6) 100%);
+      padding: 10px 14px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(15, 18, 24, 0.45) 100%);
       border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 7px;
+      border-radius: 6px;
       color: var(--text-main);
       font-size: 0.88rem;
       font-weight: 600;
       letter-spacing: 1px;
       text-align: left;
       transition: all 0.15s ease;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 3px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.25);
     }
 
     .nav-btn:hover {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(30, 35, 45, 0.7) 100%);
-      border-color: rgba(255, 255, 255, 0.3);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(25, 30, 40, 0.6) 100%);
+      border-color: rgba(255, 255, 255, 0.28);
       color: #fff;
     }
 
     .nav-btn.active {
-      background: linear-gradient(180deg, rgba(10, 12, 16, 0.7) 0%, rgba(35, 40, 50, 0.7) 100%);
+      background: linear-gradient(180deg, rgba(5, 7, 10, 0.6) 0%, rgba(25, 28, 36, 0.6) 100%);
       border-color: rgba(255, 255, 255, 0.35);
       color: #fff;
       box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7);
     }
 
-    /* ÁREA DE CONTENIDO TRANSLÚCIDA */
+    /* ÁREA DE CONTENIDO */
     .content-area {
       flex: 1;
-      padding: 26px 30px;
+      padding: 24px 28px;
       overflow-y: auto;
-      max-height: 570px;
+      max-height: 560px;
     }
 
     .tab-content {
@@ -173,18 +173,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .section-title {
-      font-size: 1.15rem;
-      letter-spacing: 1.5px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      padding-bottom: 8px;
-      color: #ffffff;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-    }
-
-    /* --- MINIJUEGO: FONDO BLANCO Y MARCADOR --- */
+    /* JUEGO */
     .game-wrapper {
       position: relative;
       width: 100%;
@@ -195,11 +184,11 @@
     canvas {
       width: 100%;
       height: 250px;
-      background: #ffffff; /* FONDO BLANCO PURO */
+      background: #ffffff;
       border: 2px solid rgba(0, 0, 0, 0.8);
       border-radius: 8px;
       display: block;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
       touch-action: none;
     }
 
@@ -213,7 +202,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.75);
       border-radius: 8px;
       backdrop-filter: blur(2px);
     }
@@ -249,7 +238,7 @@
       fill: #ffffff;
     }
 
-    /* --- TARJETAS DE STOCK CON BOTÓN DE MENSAJE --- */
+    /* GRID FIGURAS Y ROPA */
     .items-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -264,13 +253,13 @@
       display: flex;
       flex-direction: column;
       box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(4px);
     }
 
     .card-img-placeholder {
       width: 100%;
       height: 200px;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -297,13 +286,13 @@
     .card-price {
       font-size: 0.85rem;
       font-weight: 700;
-      color: #9cd4ff;
+      color: #a8d5ff;
     }
 
     .card-btn {
       margin-top: 6px;
       padding: 8px 10px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(20, 24, 30, 0.7) 100%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(20, 24, 30, 0.6) 100%);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 6px;
       color: #ffffff;
@@ -320,66 +309,51 @@
       color: #000000;
     }
 
-    /* --- BLOG --- */
+    /* FEED DE BLOG LIMPIO (SIN TÍTULOS GRANDES) */
     .blog-feed {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
 
     .blog-post {
       background: var(--glass-card);
       border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 8px;
-      padding: 18px 22px;
-      backdrop-filter: blur(6px);
-    }
-
-    .post-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 6px;
-      margin-bottom: 10px;
-    }
-
-    .post-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #fff;
+      padding: 16px 20px;
+      backdrop-filter: blur(4px);
     }
 
     .post-date {
+      display: inline-block;
       font-size: 0.75rem;
       font-family: monospace;
-      color: var(--text-muted);
+      color: #92b4f2;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 3px;
     }
 
     .post-body {
-      font-size: 0.85rem;
-      line-height: 1.5;
-      color: #d8dbe2;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: #e0e4ec;
     }
 
-    /* --- CBOX CHAT --- */
-    .chat-container {
+    /* CHAT LIMPIO TRANSLÚCIDO */
+    .chat-box {
       width: 100%;
-      height: 480px;
-      background: rgba(10, 12, 16, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      min-height: 480px;
+      background: rgba(10, 12, 16, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 8px;
-      overflow: hidden;
-      backdrop-filter: blur(6px);
+      padding: 12px;
+      backdrop-filter: blur(4px);
     }
 
-    .chat-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* RESPONSIVE MÓVIL */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .window-body {
         flex-direction: column;
@@ -426,7 +400,7 @@
 
       <main class="content-area">
 
-        <!-- 1. JUEGO (FONDO BLANCO, FÍSICAS RÁPIDAS Y ALTA DIFICULTAD) -->
+        <!-- 1. JUGAR -->
         <section id="tab-jugar" class="tab-content active">
           <div class="game-wrapper">
             <canvas id="gameCanvas" width="760" height="250"></canvas>
@@ -436,14 +410,13 @@
                 <svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
                 PLAY
               </button>
-              <p style="font-size:0.75rem; color:#444; margin-top:12px; font-weight:600;">[ESPACIO / TOCAR] para saltar</p>
+              <p style="font-size:0.75rem; color:#333; margin-top:12px; font-weight:600;">[ESPACIO / TOCAR] para saltar</p>
             </div>
           </div>
         </section>
 
-        <!-- 2. FIGURAS (CON BOTÓN A MESSENGER) -->
+        <!-- 2. FIGURAS -->
         <section id="tab-figuras" class="tab-content">
-          <h2 class="section-title">Figuras // Stock</h2>
           <div class="items-grid">
             
             <div class="card">
@@ -476,9 +449,8 @@
           </div>
         </section>
 
-        <!-- 3. ROPA (CON BOTÓN A MESSENGER) -->
+        <!-- 3. ROPA -->
         <section id="tab-ropa" class="tab-content">
-          <h2 class="section-title">Prendas // Colección</h2>
           <div class="items-grid">
             <div class="card">
               <div class="card-img-placeholder">[Prenda #01]</div>
@@ -493,19 +465,16 @@
 
         <!-- 4. ANIME -->
         <section id="tab-anime" class="tab-content">
-          <h2 class="section-title">Enlaces & Directorio</h2>
-          <p style="font-size:0.85rem; color:var(--text-muted);">Próximamente directorio de fuentes y descargas recomendadas.</p>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height: 1.6;">
+            Directorio de enlaces, bases de datos y archivos multimedia próximamente.
+          </p>
         </section>
 
-        <!-- 5. BLOG (ACTUALIZABLE EN HTML) -->
+        <!-- 5. BLOG (ACTUALIZACIONES LIMPIAS) -->
         <section id="tab-blog" class="tab-content">
-          <h2 class="section-title">Bitácora Personal</h2>
           <div class="blog-feed">
             <article class="blog-post">
-              <div class="post-header">
-                <span class="post-title">Llegaron los sets de Las Quintillizas // Japón</span>
-                <span class="post-date">OCTUBRE 2026</span>
-              </div>
+              <span class="post-date">OCTUBRE 2026</span>
               <p class="post-body">
                 Comenzamos con la llegada de los sets completos de Las Quintillizas traídos con ZenMarket. Cajas en perfecto estado protegidas de origen y listas para entrega en Lima.
               </p>
@@ -513,11 +482,20 @@
           </div>
         </section>
 
-        <!-- 6. CHAT GLOBAL CBOX EMBEBIDO -->
+        <!-- 6. CHAT / LIBRO DE VISITAS LIMPIO -->
         <section id="tab-chat" class="tab-content">
-          <h2 class="section-title">Global Chat // Live</h2>
-          <div class="chat-container">
-            <iframe src="https://my.cbox.ws/itsuki606" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+          <div class="chat-box">
+            <div id="HCB_comment_box" style="color:#f0f0f0;">Cargando mensajes...</div>
+            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css" />
+            <script type="text/javascript" id="hcb">
+              if(!window.hcb_user){hcb_user={};} 
+              (function(){
+                var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";
+                s.setAttribute("type","text/javascript");
+                s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1%24...&opts=16862&num=10&ts=1");
+                if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);
+              })();
+            </script>
           </div>
         </section>
 
@@ -525,7 +503,7 @@
     </div>
   </div>
 
-  <!-- SCRIPT CON FÍSICAS REHECHAS (DINO CHROME + MÁS VELOCIDAD Y OBSTÁCULOS) -->
+  <!-- SCRIPT DEL JUEGO: FÍSICAS ÁGILES Y DIFICULTAD QUE ESCALA RÁPIDO -->
   <script>
     function openTab(evt, tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
@@ -549,20 +527,21 @@
     let score = 0;
     let highScore = localStorage.getItem('valkyrie_hi') || 0;
     
-    // Configuración de dificultad rápida
-    let speed = 7.5; // Comienza con velocidad ágil
+    // Configuración de velocidad inicial alta y dificultad visible
+    let baseSpeed = 8.5; 
+    let currentSpeed = baseSpeed;
     let spawnTimer = 0;
-    let nextSpawnDistance = 60;
+    let nextSpawnDistance = 45;
 
-    // FÍSICAS ESTILO DINOSAURIO: Gravedad alta y salto con respuesta instantánea
+    // Físicas agresivas (salto con arco rápido, sin flotabilidad)
     const osaka = {
-      x: 65,
+      x: 70,
       y: 145,
       width: 48,
       height: 65,
       dy: 0,
-      jumpForce: -14.2, // Salto fuerte
-      gravity: 0.95,    // Caída rápida, no flota
+      jumpForce: -15.5,
+      gravity: 1.15,
       groundY: 145,
       isGrounded: true,
       
@@ -599,35 +578,32 @@
     class Obstacle {
       constructor() {
         this.x = canvas.width;
-        // Tipos de obstáculos con dificultad variable
         const rand = Math.random();
-        if (rand < 0.4) {
-          // Bloque simple
-          this.width = 16;
-          this.height = 36;
-        } else if (rand < 0.75) {
-          // Bloque ancho (exige salto largo y preciso)
-          this.width = 34;
-          this.height = 36;
+        if (rand < 0.35) {
+          // Bloque individual
+          this.width = 18;
+          this.height = 38;
+        } else if (rand < 0.70) {
+          // Bloque doble (ancho, exige saltar justo al borde)
+          this.width = 44;
+          this.height = 38;
         } else {
           // Obstáculo alto
-          this.width = 20;
-          this.height = 50;
+          this.width = 22;
+          this.height = 54;
         }
         this.y = (osaka.groundY + osaka.height) - this.height;
       }
       update() {
-        this.x -= speed;
+        this.x -= currentSpeed;
       }
       draw() {
-        // Dibujado en negro sobre fondo blanco
         ctx.fillStyle = '#000000';
         ctx.fillRect(this.x, this.y, this.width, this.height);
-        // Detalle interior en blanco
         ctx.fillStyle = '#ffffff';
         ctx.fillRect(this.x + 3, this.y + 3, this.width - 6, this.height - 6);
         ctx.fillStyle = '#000000';
-        ctx.fillRect(this.x + 5, this.y + 5, this.width - 10, this.height - 10);
+        ctx.fillRect(this.x + 6, this.y + 6, this.width - 12, this.height - 12);
       }
     }
 
@@ -641,9 +617,9 @@
       ctx.lineTo(canvas.width, lineY);
       ctx.stroke();
 
-      groundOffset = (groundOffset + speed) % 24;
-      ctx.fillStyle = '#666666';
-      for (let x = -groundOffset; x < canvas.width; x += 24) {
+      groundOffset = (groundOffset + currentSpeed) % 20;
+      ctx.fillStyle = '#555555';
+      for (let x = -groundOffset; x < canvas.width; x += 20) {
         ctx.fillRect(x, lineY + 6, 8, 2);
       }
     }
@@ -668,20 +644,20 @@
       isPlaying = true;
       isGameOver = false;
       score = 0;
-      speed = 7.5;
+      currentSpeed = baseSpeed;
       obstacles = [];
       spawnTimer = 0;
-      nextSpawnDistance = 50;
+      nextSpawnDistance = 40;
       loop();
     }
 
     function restartGame() {
       isGameOver = false;
       score = 0;
-      speed = 7.5;
+      currentSpeed = baseSpeed;
       obstacles = [];
       spawnTimer = 0;
-      nextSpawnDistance = 50;
+      nextSpawnDistance = 40;
       osaka.y = osaka.groundY;
       osaka.dy = 0;
       osaka.isGrounded = true;
@@ -703,7 +679,6 @@
     function loop() {
       if (!isPlaying) return;
 
-      // FONDO BLANCO EN EL CANVAS
       ctx.fillStyle = '#ffffff';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -712,20 +687,19 @@
       osaka.draw();
 
       if (!isGameOver) {
-        score += 0.2;
-        // Aumento constante de velocidad
-        if (speed < 16) {
-          speed += 0.003;
-        }
+        score += 0.25;
 
-        // Generador de obstáculos más continuo y desafiante
+        // Aceleración perceptible cada fracción de tiempo
+        currentSpeed = baseSpeed + (score * 0.006);
+
         spawnTimer++;
         if (spawnTimer >= nextSpawnDistance) {
           obstacles.push(new Obstacle());
           spawnTimer = 0;
-          // El espacio entre obstáculos disminuye conforme la velocidad sube
-          const minGap = Math.max(30, 65 - Math.floor(speed * 2.2));
-          const maxGap = Math.max(50, 105 - Math.floor(speed * 2.2));
+          
+          // Distancia entre obstáculos reducida dinámicamente con la velocidad
+          const minGap = Math.max(25, 55 - Math.floor(currentSpeed * 2));
+          const maxGap = Math.max(45, 90 - Math.floor(currentSpeed * 2));
           nextSpawnDistance = Math.floor(Math.random() * (maxGap - minGap)) + minGap;
         }
 
@@ -734,7 +708,6 @@
           obs.update();
           obs.draw();
 
-          // Hitbox ajustada al cuerpo de Osaka
           const padX = 12;
           const padY = 8;
           if (
@@ -757,7 +730,6 @@
       } else {
         obstacles.forEach(o => o.draw());
 
-        // Pantalla de Game Over
         ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
